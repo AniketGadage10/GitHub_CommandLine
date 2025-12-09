@@ -1,0 +1,121 @@
+Git Commands Summary
+
+1. Start with below commands:
+
+-   git config --global user.name "AniketGadge10"
+-   git config --global user.email "xyz@gmail.com"
+
+2. Display user details:
+
+-   git config --global user.name
+-   git config --global user.email
+
+3. Create a repository without name:
+
+-   git init .
+
+4. Add & remove file in staging area:
+
+The staging area is a “selection area” where you organize code changes
+before commit. - Add single file: git add ./GitCommand.docx - Add all
+files: git add . - Remove from staging:
+- git reset ./GitCommand.docx
+- git restore --staged ./GitCommand.docx
+
+5. Add changes to local VCS:
+
+-   Commit: git commit -m "comment message"
+-   Remove from local VCS: git reset ./GitCommand.docx
+
+6. Show current status:
+
+-   git status
+
+7. Show commit history:
+
+-   git log
+
+8. Compare working directory with staging:
+
+-   git diff
+
+9. Compare staging with local repository:
+
+-   git diff --staged
+
+10. Compare working directory with local repository:
+
+-   git diff HEAD
+
+11. Push code to remote repository:
+
+-   git push
+-   git push origin master
+
+12. Clone repo:
+
+-   git clone https://github.com/AniketGadage10/GitHub_CommandLine
+
+13. Clone vs Pull:
+
+  ------------------------------------------------------------------------
+  Command           Purpose                When to Use
+  ----------------- ---------------------- -------------------------------
+  git clone         Download entire repo   Starting new project
+                    first time             
+
+  git pull          Update local repo with Get latest updates
+                    remote changes         
+  ------------------------------------------------------------------------
+
+Note: git pull = git fetch + git merge
+
+14. Fetch updates without merging:
+
+-   git fetch
+-   git fetch origin
+-   git fetch origin main
+-   git diff main origin/main
+-   git log main..origin/main
+
+Useful when you want to review changes before merging.
+
+15. Origin:
+
+A nickname for your remote GitHub repo URL. Set automatically when
+cloning.
+
+16. Add remote origin manually:
+
+-   git remote add origin https://github.com/user/myproject.git
+
+Used when: - Repo is created locally and later linked to GitHub.
+
+17. Git Stages:
+
+-   Untracked – New files not added to git
+-   Staged – Files added but not committed
+-   Committed – Saved in local VCS
+-   Pushed – Uploaded to remote repo
+
+------------------------------------------------------------------------
+
+Undo Commands
+
+Example 1: Unstage a wrong file
+
+    git add wrongfile.txt
+    git reset wrongfile.txt
+    git restore --staged wrongfile.txt
+
+Example 2: Restore file to last commit
+
+    git restore app.js
+
+Example 3: Undo last commit but keep changes
+
+    git reset --soft HEAD~1
+
+Example 4: Delete last commit permanently
+
+    git reset --hard HEAD~1
